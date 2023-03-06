@@ -10,44 +10,9 @@
 </head>
 
 <body class="bg-cover" style="background-image:url(./background.svg)">
-    <div>
-        <nav class="flex items-center justify-between flex-wrap bg-gray-500 p-6">
-            <div class="flex items-center flex-shrink-0 text-white mr-6">
-
-                <a href="Historypage.html"><span class="font-semibold text-xl tracking-tight">Playstation website</span></a>
-            </div>
-            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-                <div class="text-sm lg:flex-grow">
-                    <a href="playstation_games_and_subscriptions.html"
-                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                    Playstation Games and Subscriptions
-                </a>
-                    <a href="Comparisonpage.html"
-                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                        Comparisons
-
-                    </a>
-                    <a href="price_listing.html"
-                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                        Price Listing
-                    </a>
-
-                    <a href="reviews.html" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-
-                        Reviews
-                    </a>
-                </div>
-                <div>
-                    <a href="#"
-                        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-gray-600 hover:border-transparent hover:text-gray-500 hover:bg-gray-800 mt-4 lg:mt-0">Log
-                        in</a>
-                    <a href="#"
-                        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-gray-600 hover:border-transparent hover:text-gray-500 hover:bg-gray-800 mt-4 lg:mt-0">Create
-                        Account</a>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <?php
+    include("navbar.php");
+    ?>
     <!--Title for the page-->
     <div class="text-center">
         <h1 class="mb-4 text-3xl font-extrabold text-gray-900 text-white md:text-5xl lg:text-6xl">
@@ -68,7 +33,7 @@
         </select>
     </div>
        <!--review-->
-    <form class="top-0 pt-2">
+    <form class="top-0 pt-2" action="/action_php" method="get">
         <div class="max-w-xl mx-auto mb-4 border rounded-lg bg-gray-50 bg-gray-700 border-gray-600">
             <div class="px-4 py-2 bg-gray-800 rounded-t-lg bg-gray-800">     
         <label for="comment" class="sr-only">Review</label>

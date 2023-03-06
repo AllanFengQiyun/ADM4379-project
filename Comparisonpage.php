@@ -15,63 +15,27 @@
 </head>
 
 <body class="bg-cover" style="background-image:url(./background.svg)">
-    <nav class="flex items-center justify-between flex-wrap bg-gray-500 p-6">
-        <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <a href="Historypage.html"><span class="font-semibold text-xl tracking-tight">Playstation website</span></a>
-        </div>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div class="text-sm lg:flex-grow">
-
-                <a href="playstation_games_and_subscriptions.html"
-                class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                Playstation Games and Subscriptions
-            </a>
-
-                <a href="Comparisonpage.html"
-                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                    Comparisons
-                </a>
-                <a href="price_listing.html"
-                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                    Price Listing
-                </a>
-                <a href="reviews.html" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                    Reviews
-                </a>
-            </div>
-            <div>
-                <a href="#"
-                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Log
-                    in</a>
-                <a href="#"
-                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Create
-                    Account</a>
-            </div>
-        </div>
-    </nav>
+    <?php
+    include("navbar.php");
+    ?>
     <div id="container" class="container mx-auto">
         <div class="comparisondiv">
             <h1 id="heading_comparison"
-                class="mb-4 text-3xl font-extrabold  text-white md:text-5xl lg:text-6xl">
+                class="text-3xl font-extrabold  text-white md:text-5xl lg:text-6xl">
                 <span
                     class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-purple-400">Comparison</span>
                 between Competitors</h1>
 
-            <p id="p_comparison" style="margin: 10px;color:white">
+            <p class="m-10 text-white">
 
                 When it comes to gaming there really isn't a wrong answer, there are plenty of differences that suits
                 different people in thier own way, however, the reason that we believe Playstation is superior is
                 because of the price and the overall advantage it has when comparing other platforms' graphics and
                 loading times.
             </p>
-            <div class="w-full bg-white border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
-
-                style=" margin: 10px;color:white">
-
+            <div class="container p-4 w-full mx-auto border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700">
                 <table
-                style=" margin: 10px"
-                    class="w-full  bg-white border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700">
-
+                class="m-5 border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700">
                     <tr>
                         <th>Platform</th>
                         <th>Price</th>
@@ -126,7 +90,7 @@
         <div id="grid" class="flex flex-wrap grow-0 justify-center gap-4" style="height: 1000px">
             <div class="px-5 pb-5">
                 <ul style="columns: 2 ; height: 1000px;">
-                    <div class="bg-white border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
+                    <div class="border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
                         style="max-width: 669px; text-align: justify; padding: 15px; margin: 10px">
                         <h2 class="mb-4 text-3xl font-bold  text-white md:text-5xl lg:text-6xl" style="font-size: x-large;">
                             Playstation 5</h2>
@@ -139,7 +103,7 @@
                         </li>
                     </div>
 
-                    <div class="bg-white border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
+                    <div class="border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
                         style="max-width: 669px; text-align: justify; padding: 15px; margin: 10px">
                         <h2 class="mb-4 text-3xl font-bold  text-white md:text-5xl lg:text-6xl" style="font-size: x-large;">
                             Xbox
@@ -153,7 +117,7 @@
 
                     </div>
 
-                    <div class="bg-white border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
+                    <div class="border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
                         style="max-width: 669px; text-align: justify; padding: 15px; margin: 10px">
 
                         <h2 class="mb-4 text-3xl font-bold  text-white md:text-5xl lg:text-6xl" style="font-size: x-large;">
@@ -169,7 +133,7 @@
                         </li>
                     </div>
 
-                    <div class="bg-white border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
+                    <div class="border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700"
                         style="max-width: 669px; text-align: justify; padding: 15px; margin: 10px">
                         <h2 class="mb-4 text-3xl font-bold  text-white md:text-5xl lg:text-6xl" style="font-size: x-large;">
                             PC</h2>
