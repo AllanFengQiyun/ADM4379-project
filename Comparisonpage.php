@@ -21,7 +21,7 @@
     <div id="container" class="container mx-auto">
         <div class="comparisondiv">
             <h1 id="heading_comparison"
-                class="text-3xl font-extrabold  text-white md:text-5xl lg:text-6xl">
+                class="text-3xl font-extrabold text-white md:text-5xl lg:text-6xl">
                 <span
                     class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-purple-400">Comparison</span>
                 between Competitors</h1>
@@ -35,7 +35,7 @@
             </p>
             <div class="container p-4 w-full mx-auto border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700">
                 <table
-                class="m-5 border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700">
+                class="border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700">
                     <tr>
                         <th>Platform</th>
                         <th>Price</th>

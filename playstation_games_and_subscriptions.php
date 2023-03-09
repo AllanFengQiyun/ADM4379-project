@@ -114,24 +114,24 @@
             'description' => 'Ghost of Tsushima although only a year old has become a staple in the open-world action-adventure genre. 
               This game follows the journey of Jin Sakai, a samurai warrior who battles invaders to protect his people. 
               This game has become one of the most popular PlayStation exclusives through its pristine combat, and immersive storyline. ',
-        ],
-    ];
-    foreach ($games as $index => $game) {
-      echo '<div class="px-5 pb-5">
+        ]
+    ];?>
+    <?php foreach ($games as $index => $game) { ?>
+      <div class="px-5 pb-5">
             <div class="w-full max-h-30 m max-w-sm border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700 p-4 flex-wrap grow-0">
                 <h3 class="mb-4 text-xl font-extrabold text-white md:text-2xl lg:text-3xl">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-purple-400">'.($index + 1).'.</span>
-                    <span class="text-white-900">'.$game['title'].'</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-purple-400"><?php ($index + 1); ?> </span>
+                    <span class="text-white-900"><?php echo $game['title']; ?></span>
                 </h3>
                 <a href="#">
-                    <img class="p-8 object-scale-down rounded-t-lg" src="'.$game['image'].'" alt="product image" />
+                    <img class="p-8 object-scale-down rounded-t-lg" src="<?php echo $game['image'] ?>" alt="product image" />
                 </a>
                 <p class="mb-3 font-light text-gray-500 text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left">
-                '.$game['description'].'
+                <?php echo $game['description'] ?>
                 </p>
             </div>
-        </div>';
-     } ?>
+        </div>
+    <?php } ?>
 </div>
         <!-- second container sixth box -->
         <div class="px-5 pb-5">
