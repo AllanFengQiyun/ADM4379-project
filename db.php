@@ -2,7 +2,8 @@
 $con = mysqli_connect("localhost",
 "root",
 "",
-"playstation");
+"playstation",
+"3308");
 // Check connection
 if (mysqli_connect_errno())
 {

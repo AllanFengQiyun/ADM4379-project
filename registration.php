@@ -9,6 +9,8 @@
 
 <body class="bg-cover" style="background-image:url(./background.svg)">
     <?php
+    ini_set('displayu_errors', '1');
+    error_reporting(E_ALL);
     include("navbar.php");
     require('db.php');
     // If form submitted, insert values into the database.
@@ -19,10 +21,9 @@
         $email = mysqli_real_escape_string($con,$email);
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($con,$password);
-        $create_datetime = date("Y-m-d H:i:s");
-        $query = "INSERT into `users` (username, password, email, create_datetime)";
-        $result = mysqli_query($con,$query);
-        echo "<p>".$result."</p>";
+        $create_datetime = date("Ymd");
+        $query = "INSERT INTO users (id,username,email,password,create_datetime) VALUES (0,'{$username}','{$email}','{$password}',{$create_datetime});";
+        $result = $con -> query($query);
         if($result){
             echo "<div class='form'>
             <h3>You are registered successfully.</h3>
