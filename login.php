@@ -28,7 +28,7 @@
         $rows = mysqli_num_rows($result);
         if($rows==1){
             $_SESSION['username'] = $username;
-            header("Location: dashboard.php");
+            header("Location:dashboard.php");
         }else{
             echo "<div class='form'>
             <h3>Username/password is incorrect.</h3>

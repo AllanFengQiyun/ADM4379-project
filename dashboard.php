@@ -1,5 +1,6 @@
 <?php
 include("auth_session.php");
+echo "here"
 ?>
 <html>
     <head>
@@ -9,8 +10,9 @@ include("auth_session.php");
     </head>
     <body>
         <div class="form">
-            <p>Welcome to Dashboard, <?php echo $_SESSION['username'];?>!</p>
+            <p>Welcome to Dashboard, <?php echo $_SESSION['username']; ?>!</p>
             <p><a href="Historypage.php">Home</a></p>
             <a href="logout.php">Logout</a>
+        </div>
     </body>
 </html>
