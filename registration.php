@@ -22,7 +22,7 @@
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($con,$password);
         $create_datetime = date("Ymd");
-        $query = "INSERT INTO users (id,username,email,password,create_datetime) VALUES (0,'{$username}','{$email}','{$password}',{$create_datetime});";
+        $query = "INSERT INTO users (id,username,email,password,create_datetime) VALUES (0,'{$username}','{$email}','".md5($password)."',{$create_datetime});";
         $result = $con -> query($query);
         if($result){
             echo "<div class='form'>
@@ -38,7 +38,7 @@
     <!--Title for the page-->
     <div class="text-center">
         <h1 class="mb-4 text-3xl font-extrabold text-gray-900 text-white md:text-5xl lg:text-6xl">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-purple-400">Registration Form</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-purple-400">Registration</span>
         </h1>
     </div>
     <!--Registration form-->
