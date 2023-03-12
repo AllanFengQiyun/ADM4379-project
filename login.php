@@ -41,7 +41,7 @@
                     <span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-purple-400">Login</span>
                 </h1>
             </div>
-            <!--Registration form-->
+            <!--login form-->
             <div class="max-w-md mx-auto mb-4 border rounded-lg bg-gray-50 bg-gray-700 border-gray-600">
                 <form class="px-4 py-2 bg-gray-800" method="post" name="login">
                     <div class="mb-4">
@@ -62,7 +62,7 @@
                     </div>
                 </form>
    <?php }
-    ?>
+    ?></div>
   
 </body>
 
