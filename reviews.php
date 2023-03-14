@@ -116,7 +116,6 @@
         $result2 = $con -> query($sql);
         $row = $result2 -> fetch_assoc();
         $user_id = $row['id'];
-        echo ISSET($_REQUEST['comment']);
         if(ISSET($_REQUEST['comment'])){
             $comment = $_REQUEST['comment'];
             $comment = mysqli_escape_string($con, $comment);
