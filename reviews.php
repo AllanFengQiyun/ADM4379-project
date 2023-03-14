@@ -18,9 +18,30 @@
                 <span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-purple-400">Reviews</span>
             </h1>
         </div>
-    <?php if(ISSET($_SESSION['username'])){ ?>
+    <?php 
+
+    include("db.php");
+    $sql = "SELECT username,comment FROM reviews r
+    JOIN users u ON u.id=r.user_id;";
+    $result = $con -> query($sql);
+    while($row = $result->fetch_assoc()){?>
+    <div class="grid">
+    <form class ="top-0 pt-2">
+        <div class="container px-4 py-2 bg-gray-800 rounded-lg bg-gray-800 max-w-lg mx-auto ">
+            <?php echo $row['comment']?>
+            <div class="flex justify-end">
+                <p class="text-xs text-gray-500 text-gray-400 text-center bg-gray-800 border-gray-600">
+                    <?php echo $row['username']?>
+                </p>
+        </div>
+    </form>
+    </div>
+    <br/>
+    <?php }
+        if(ISSET($_SESSION['username'])){ ?>
 
         <!--product selector-->
+        <div class="grid">
         <div class="px-4 py-2 bg-gray-800 rounded-lg bg-gray-800 max-w-lg mx-auto">
             <label for="Product" class="block text-sm font-medium text-white">Select an
                 option</label>
@@ -34,13 +55,14 @@
             </select>
         </div>
            <!--review-->
-        <form class="top-0 pt-2" action="/action_php" method="post">
+        <form class="top-0 pt-2" id="commentForm" action="" method="post">
             <div class="max-w-xl mx-auto mb-4 border rounded-lg bg-gray-50 bg-gray-700 border-gray-600">
                 <div class="px-4 py-2 bg-gray-800 rounded-t-lg bg-gray-800">     
             <label for="comment" class="sr-only">Review</label>
-            <textarea id="comment" rows="4"
+            <textarea name="comment" id="comment" rows="4"
                 class="w-full px-0 text-sm text-gray-900 bg-gray-800 border-0 bg-gray-800 focus:ring-0 text-white placeholder-gray-400"
-                placeholder="Write a review" required></textarea>
+                placeholder="Write a review"
+                form="commentForm" required></textarea>
             <div class="flex items-center justify-between px-3 py-2 border-t border-gray-600">
                 <button type="submit"
                     class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-gray-200 focus:ring-gray-900 hover:bg-gray-800">
@@ -85,22 +107,27 @@
             Remember, reviews should follow our
             <a href="#" class="text-purple-600 text-gray-500 hover:underline">Community Guidelines</a>.
         </p>
-    <?php }
-
-    include("db.php");
-    $sql = "SELECT username,comment FROM reviews r
-    JOIN users u ON u.id=r.user_id;";
-    $result = $con -> query($sql);
-    while($row = $result->fetch_assoc()){?>
-        <div class="px-4 py-2 bg-gray-800 rounded-lg bg-gray-800 max-w-lg mx-auto">
-            <?php echo $row['comment']?>
-            <div class="flex justify-end">
-                <p class="text-xs text-gray-500 text-gray-400 text-center bg-gray-800 border-gray-600">
-                    <?php echo $row['username']?>
-                </p>
         </div>
-    
-    <?php }?>
+        <?php }
+        //get user_id
+        $username = mysqli_escape_string($con,$_SESSION['username']);
+        $sql = "SELECT id FROM users WHERE username = '$username'";
+        //post comment
+        $result2 = $con -> query($sql);
+        $row = $result2 -> fetch_assoc();
+        $user_id = $row['id'];
+        echo ISSET($_REQUEST['comment']);
+        if(ISSET($_REQUEST['comment'])){
+            $comment = $_REQUEST['comment'];
+            $comment = mysqli_escape_string($con, $comment);
+            $sql = "INSERT INTO reviews (id,user_id,comment) VALUES (0, '$user_id', '$comment')";
+            $result3 = $con -> query($sql);
+            if($result3){
+                header("Location: reviews.php");
+            }else{
+                echo "Error posting comment, please try again";
+            }
+        }?>
 </body>
 
 </html>
