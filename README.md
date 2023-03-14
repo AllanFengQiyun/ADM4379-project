@@ -12,3 +12,5 @@ Change the port for the mysql database to 3308.
 Please do so in the respective way for your system.
 
 Start the local server at the root folder of this repository. Start the mysql server.
+
+Please go in to db.php and modify the connection settings to your settings.
