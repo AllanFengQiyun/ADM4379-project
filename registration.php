@@ -9,8 +9,6 @@
 
 <body class="bg-cover" style="background-image:url(./background.svg)">
     <?php
-    ini_set('displayu_errors', '1');
-    error_reporting(E_ALL);
     include("navbar.php");
     require('db.php');
     // If form submitted, insert values into the database.
