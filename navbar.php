@@ -26,17 +26,23 @@
             session_start();
             if(isset($_SESSION['username'])){?>
                 <div>
+                    <a href="cart.php"
+                        class="inline-block text-sm px-5 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Cart
+                    <?php if(isset($_SESSION['cart'])){
+                        $count = count($_SESSION['cart']);?>
+                        <span id="cart_count" class="text-white bg-black rounded-full px-2 py-1 text-xs font-bold ml-1"><?php echo $count;}?></span>
+                    </a>
                     <a href="logout.php"
-                        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Log
+                        class="inline-block text-sm px-5 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Log
                         out</a>
                 </div>
             <?php }else{ ?>
             <div>
                 <a href="login.php"
-                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Log
+                    class="inline-block text-sm px-5 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Log
                     in</a>
                 <a href="registration.php"
-                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Create
+                    class="inline-block text-sm px-5 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0">Create
                     Account</a>
             </div>
         <?php }?>

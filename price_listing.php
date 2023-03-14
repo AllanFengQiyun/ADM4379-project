@@ -26,7 +26,31 @@
     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
     </path>
     </svg>';
+
+    session_start();
+    if (ISSET($_GET['pro_id'])){
+        $pro_id = $_GET['pro_id'];
+    if(!empty($_SESSION['cart'])){
+        $array_col = array_column($_SESSION['cart'], 'pro_id');
+        if (in_array($pro_id,$array_col)){
+            $_SESSION['cart'][$pro_id]['quantity']+=1;
+        }else{
+            $item = [
+                'pro_id' => $_GET['pro_id'],
+                'quantity' => 1
+            ];
+            $_SESSION['cart'][$pro_id] = $item;
+        }
+    }else{
+        $item = [
+            'pro_id' => $_GET['pro_id'],
+            'quantity' => 1
+        ];
+        $_SESSION['cart'][$pro_id] = $item;
+    }
+    }
     ?>
+
     <div class="flex flex-wrap grow-0 justify-center gap-4">
         <!-- first box-->
         <div class="w-full max-w-sm border border-gray-200 rounded-lg shadow bg-gray-800 border-gray-700">
@@ -50,7 +74,7 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-3xl font-bold text-white">$729</span>
-                    <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Add
+                    <a href="price_listing.php?pro_id=1" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Add
                         to cart</a>
                 </div>
             </div>
@@ -77,7 +101,7 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-3xl font-boldd text-white">$599</span>
-                    <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Add
+                    <a href="price_listing.php?pro_id=2" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Add
                         to cart</a>
                 </div>
             </div>
@@ -104,7 +128,7 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-3xl font-bold  text-white">$649</span>
-                    <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Add
+                    <a href="price_listing.php?pro_id=3" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Add
                         to cart</a>
                 </div>
             </div>
@@ -131,7 +155,7 @@
                </div>
                 <div class="flex items-center justify-between">
                     <span class="text-3xl font-bold  text-white">$499</span>
-                    <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Add
+                    <a href="price_listing.php?pro_id=4" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Add
                         to cart</a>
                 </div>
             </div>
